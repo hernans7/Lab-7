@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Samantha Hernandez Ramirez | Agentic AI Lab</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --black:#1a0010;
+      --crimson:#cd003b;
+      --white:#ffffff;
+      --light:#f5f5f5;
+      --border:#dddddd;
+      --text:#333333;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Space Grotesk', sans-serif;
+      background:var(--light);
+      color:var(--text);
+      line-height:1.7;
+    }
+
+    header{
+      background:var(--black);
+      color:white;
+      padding:80px 10%;
+      border-bottom:6px solid var(--crimson);
+    }
+
+    header h1{
+      font-family:'Oswald', sans-serif;
+      font-size:4rem;
+      text-transform:uppercase;
+      letter-spacing:2px;
+      margin-bottom:10px;
+    }
+
+    header h2{
+      color:var(--crimson);
+      font-weight:500;
+      margin-bottom:20px;
+    }
+
+    header p{
+      max-width:850px;
+      font-size:1.1rem;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+      padding:50px 0;
+    }
+
+    .card{
+      background:white;
+      padding:35px;
+      margin-bottom:35px;
+      border-left:6px solid var(--crimson);
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .card h3{
+      font-family:'Oswald', sans-serif;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      margin-bottom:20px;
+      color:var(--black);
+      font-size:2rem;
+    }
+
+    .card p{
+      margin-bottom:15px;
+    }
+
+    .reflection{
+      background:#fff7f9;
+      padding:20px;
+      border:1px solid #ffd1dc;
+      margin-top:20px;
+    }
+
+    .reflection h4{
+      color:var(--crimson);
+      margin-bottom:10px;
+      font-size:1.1rem;
+    }
+
+    .code-block{
+      background:#111;
+      color:#f5f5f5;
+      padding:20px;
+      overflow-x:auto;
+      margin-top:20px;
+      border-radius:4px;
+      font-size:0.9rem;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+      margin-top:25px;
+      border:1px solid #ccc;
+    }
+
+    .takeaways{
+      background:var(--black);
+      color:white;
+      padding:40px;
+      border-left:6px solid var(--crimson);
+    }
+
+    .takeaways h3{
+      color:white;
+      margin-bottom:20px;
+    }
+
+    ul{
+      padding-left:20px;
+    }
+
+    li{
+      margin-bottom:12px;
+    }
+
+    footer{
+      background:var(--black);
+      color:white;
+      text-align:center;
+      padding:40px 20px;
+      border-top:6px solid var(--crimson);
+      margin-top:50px;
+    }
+
+    a{
+      color:var(--crimson);
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    .badge{
+      display:inline-block;
+      background:var(--crimson);
+      color:white;
+      padding:6px 12px;
+      margin:5px 5px 0 0;
+      font-size:0.8rem;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+
+    @media(max-width:768px){
+      header h1{ font-size:2.5rem; }
+      .card{ padding:25px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Samantha Hernandez Ramirez</h1>
+  <h2>Agentic AI Lab: From Healthcare Insurance Advocacy to Personal AI Agents</h2>
+  <p>MIS 432 · AI in Business · Western Washington University</p>
+
+  <br><br>
+
+  <p>
+    In this lab, I built AI agent workflows using n8n and large language models. I created an AI Insurance Advocate that analyzes denied claims, pulls patient charts, checks insurance policy rules, and drafts appeal letters with evidence. I also built a personal agent for event planning. This project showed me how powerful agentic AI becomes when it is connected to real tools and governed properly.
+  </p>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h3>1. What is Agentic AI?</h3>
+
+    <p>
+      Agentic AI goes beyond chatbots by using tools and making decisions about what steps to take next. Instead of responding once, it runs a loop of observing, thinking, acting, and checking results.
+    </p>
+
+    <div class="reflection">
+      <h4>Reflection</h4>
+      <p>
+        A Level 2 system would require step-by-step instructions, while a Level 3 agentic system can independently plan and execute tasks like managing group projects or schedules. I would still want human approval for final decisions.
+      </p>
+    </div>
+
+    <div class="badge">Agentic AI</div>
+    <div class="badge">Workflows</div>
+    <div class="badge">Automation</div>
+  </div>
+
+  <div class="card">
+    <h3>2. AI Insurance Advocate</h3>
+
+    <p>
+      I built an AI Insurance Advocate in n8n that reads denial letters, pulls patient medical records, checks insurance policy rules, and drafts appeal letters.
+    </p>
+
+    <img src="medical-workflow.png" alt="Medical AI Workflow Screenshot"/>
+
+    <div class="code-block">
+SYSTEM PROMPT:
+You are an insurance appeal specialist. Use patient chart + policy data to draft appeal letters.
+Do not hallucinate or fabricate information.
+Only use verified facts from tools.
+    </div>
+
+    <div class="reflection">
+      <h4>Reflection</h4>
+      <p>
+        The agent followed the full observe → think → act → check workflow and decided tool usage on its own, which made it feel like a real autonomous system.
+      </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>3. Second Agent — Concert Planner</h3>
+
+    <p>
+      I also built a personal agent that recommends concerts based on schedule, budget, and events available.
+    </p>
+
+    <img src="concert-workflow.png" alt="Concert Planning AI Workflow Screenshot"/>
+
+    <div class="reflection">
+      <h4>Reflection</h4>
+      <p>
+        This agent uses tools for events, calendar, and budget to recommend the best option instead of requiring manual step-by-step input.
+      </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>4. Auditing & Governance</h3>
+
+    <p>
+      I evaluated risks such as hallucinations, missing policy data, and errors at scale. Even accurate systems still require human oversight.
+    </p>
+
+    <div class="reflection">
+      <h4>Reflection</h4>
+      <p>
+        Governance is essential in healthcare AI. Without proper checks, even small error rates can impact many patients.
+      </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>5. Ethics & Risk</h3>
+
+    <p>
+      The biggest concern is errors at scale. Even a small failure rate becomes significant when processing hundreds of cases.
+    </p>
+
+    <div class="reflection">
+      <h4>Reflection</h4>
+      <p>
+        I support using AI agents with strict human-in-the-loop approval and automated verification before any real-world action.
+      </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>6. Personal Agent Reflection</h3>
+
+    <p>
+      My personal agent is helpful but not yet fully trustworthy for unsupervised use.
+    </p>
+
+    <div class="reflection">
+      <h4>Reflection</h4>
+      <p>
+        I would require long-term testing, logs, and accuracy tracking before giving full autonomy.
+      </p>
+    </div>
+  </div>
+
+  <div class="takeaways">
+    <h3>Key Takeaways</h3>
+    <ul>
+      <li>Agentic AI becomes powerful when connected to tools and workflows.</li>
+      <li>Human oversight is still necessary for high-stakes decisions.</li>
+      <li>AI systems must be audited for accuracy, not just performance.</li>
+      <li>Governance is as important as model quality.</li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  <p>Samantha Hernandez Ramirez | MIS 432 | Western Washington University</p>
+</footer>
+
+</body>
+</html>
